@@ -6,10 +6,10 @@ export const addAnnotation = (key, value) => {
     annotateData.forEach((annotateDataItem) => {
         const singleAnnotationgroup = annotateDataItem.annotations.annotations[key]
         if (singleAnnotationgroup) {
-            singleAnnotationgroup.inclusion.forEach(i => {
+            [...new Set(singleAnnotationgroup.inclusion)].forEach(i => {
                 annotated = replaceAll(annotated, i, `<span class="annotate-green">${i}</span>`)
             });
-            singleAnnotationgroup.exclusion.forEach(i => {
+            [...new Set(singleAnnotationgroup.exclusion)].forEach(i => {
                 annotated = replaceAll(annotated, i, `<span class="annotate-red">${i}</span>`)
             });
         }
