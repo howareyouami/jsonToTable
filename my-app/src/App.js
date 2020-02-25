@@ -10,7 +10,7 @@ function App() {
   const [lazyData, setLazyData] = useState(formattedData.slice(0, 2))
   const addLazyData = () => {
     if (lazyData.length < formattedData.length) {
-      setLazyData(formattedData.slice(0, lazyData.length + 3))
+      setLazyData(formattedData.slice(0, lazyData.length + 1))
     }
   }
   const buttonRef = useRef(null);
