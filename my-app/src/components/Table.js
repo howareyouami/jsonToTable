@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeTableString } from '../helpers/makeTable';
 
-function Table({data}) {
+const Table = React.memo(({ data, j }) => {
+    console.log("render=>" + j)
     return (
         <div
             style={{
@@ -13,6 +14,6 @@ function Table({data}) {
                 __html: makeTableString([data])
             }}></div>
     );
-}
+})
 
 export default Table;

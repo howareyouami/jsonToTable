@@ -1,7 +1,6 @@
 import { addAnnotation } from './addAnnotation';
 
 export const makeTableString = (dataFormatted) => {
-    console.log("dataFormatted",dataFormatted)
     let tableString = ''
     dataFormatted.forEach((i) => {
         if (i) {
