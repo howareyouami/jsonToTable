@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import data from './data.json';
+import data from './data/data.json';
 import { makeTableString} from './helpers/makeTable';
 
 function App() {
