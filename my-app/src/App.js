@@ -13,7 +13,7 @@ function App() {
           style={{
             width: "90%",
             overflow: "scroll",
-            fontSize: "12px"
+            fontSize: "18px"
           }}
           dangerouslySetInnerHTML={{
             __html: makeTableString(data)

@@ -13,11 +13,15 @@ export const makeTableString = (data) => {
     dataFormatted.forEach((i) => {
         if (i) {
             tableString += `<h2>${i.sections[0]}</h2>`
-            tableString += `<table>`
-            i.tables_xml.forEach((j) => {
-                tableString += addAnnotation(i.sections[0], j)
-            })
-            tableString += `</table>`
+            if (i.tables_xml.length) {
+                tableString += `<table>`
+                i.tables_xml.forEach((j) => {
+                    tableString += addAnnotation(i.sections[0], j)
+                })
+                tableString += `</table>`
+            } else {
+                tableString += `<p>No table</p>`
+            }
         }
     })
     return tableString
