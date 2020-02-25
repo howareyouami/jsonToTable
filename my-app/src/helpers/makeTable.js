@@ -1,14 +1,7 @@
 import { addAnnotation } from './addAnnotation';
 
-export const makeTableString = (data) => {
-    const dataFormatted = Object.keys(data.deIdentifiedFile.file).map((i) => {
-        const item = data.deIdentifiedFile.file[i]
-        if (item.text_extract && item.text_extract.tables_xml)
-            return ({
-                sections: item.text_extract.sections,
-                tables_xml: item.text_extract.tables_xml
-            })
-    })
+export const makeTableString = (dataFormatted) => {
+    console.log("dataFormatted",dataFormatted)
     let tableString = ''
     dataFormatted.forEach((i) => {
         if (i) {

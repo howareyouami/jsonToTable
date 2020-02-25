@@ -2,22 +2,17 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import data from './data/data.json';
-import { makeTableString} from './helpers/makeTable';
+import { formatData } from './helpers/formatData';
+import Table from './components/Table';
 
 function App() {
+  const formattedData = formatData(data)  
+  console.log(formattedData)
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <div
-          style={{
-            width: "90%",
-            overflow: "scroll",
-            fontSize: "18px"
-          }}
-          dangerouslySetInnerHTML={{
-            __html: makeTableString(data)
-          }}></div>
+        {formattedData.map((i) => <Table data={i} />)}
       </header>
     </div>
   );
