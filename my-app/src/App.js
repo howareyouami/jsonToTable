@@ -28,6 +28,7 @@ function App() {
         <img src={logo} className="app-logo" alt="logo" />
         {lazyData.map((i, j) => <Table data={i} j={j} key={j.toString()} />)}
         {lazyData.length < formattedData.length && <button style={{ backgroundColor: "red" }} ref={buttonRef} onClick={addLazyData}>Load More</button>}
+        {lazyData.length === formattedData.length && <p>End</p>}
       </div>
   );
 }
