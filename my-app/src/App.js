@@ -26,6 +26,7 @@ function App() {
   return (
       <div className="app-container">
         <img src={logo} className="app-logo" alt="logo" />
+        <a href="https://github.com/howareyouami/jsonToTable" style={{color:"white"}}>Github Repository</a>
         {lazyData.map((i, j) => <Table data={i} j={j} key={j.toString()} />)}
         {lazyData.length < formattedData.length && <button style={{ backgroundColor: "red" }} ref={buttonRef} onClick={addLazyData}>Load More</button>}
         {lazyData.length === formattedData.length && <p>End</p>}
